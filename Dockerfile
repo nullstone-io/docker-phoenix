@@ -26,6 +26,6 @@ WORKDIR /app
 RUN chown nobody /app
 USER nobody
 
-ENV PORT 9000
+ENV PORT 80
 
 CMD ["/app/bin/server"]
