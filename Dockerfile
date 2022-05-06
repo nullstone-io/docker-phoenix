@@ -23,8 +23,6 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 WORKDIR /app
-RUN chown nobody /app
-USER nobody
 
 ENV PORT 80
 
