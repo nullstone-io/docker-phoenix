@@ -20,6 +20,9 @@ RUN \
 # Add local node module binaries to PATH
 ENV PATH=./node_modules/.bin:$PATH
 
+# Install latest versions of Hex/Rebar
+RUN mix do local.hex --force, local.rebar --force
+
 ENV MIX_ENV dev
 
 WORKDIR /
