@@ -1,7 +1,16 @@
 build:
-	docker build -t nullstone/phoenix:local -f local.Dockerfile .
-	docker build -t nullstone/phoenix .
+	docker buildx build \
+		--push \
+		--builder=container \
+		--platform=linux/amd64,linux/arm64 \
+		-t nullstone/phoenix:local \
+		-f local.Dockerfile \
+		.
 
-push:
-	docker push nullstone/phoenix:local
-	docker push nullstone/phoenix
+	docker buildx build \
+		--push \
+		--builder=container \
+		--platform=linux/amd64,linux/arm64 \
+		-t nullstone/phoenix \
+		-f Dockerfile \
+		.
