@@ -3,7 +3,7 @@
 set -e
 
 echo "Fetching dependencies..."
-mix deps || mix deps.get
+mix deps.get
 
 # Configure DATABASE_URL if POSTGRES_URL is set
 if [ -n "${POSTGRES_URL}" ]; then
